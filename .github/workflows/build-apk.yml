@@ -34,7 +34,6 @@ jobs:
           autoconf \
           automake \
           libtool \
-          libtoolize \
           m4 \
           zlib1g-dev \
           libncurses5-dev \
@@ -57,7 +56,6 @@ jobs:
 
     - name: Set up environment
       run: |
-        export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
         echo "JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> $GITHUB_ENV
         mkdir -p ~/.buildozer
 
