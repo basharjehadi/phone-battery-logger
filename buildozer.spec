@@ -26,3 +26,4 @@ android.accept_sdk_license = True
 
 # Bootstrap
 p4a.bootstrap = sdl2
+p4a.branch = develop

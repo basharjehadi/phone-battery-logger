@@ -54,11 +54,13 @@ jobs:
     - name: Install Python tools
       run: |
         pip install --upgrade pip
-        pip install buildozer cython pep517
+        pip install buildozer cython==0.29.36
+        pip install python-for-android
 
     - name: Set up environment
       run: |
         echo "JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> $GITHUB_ENV
+        echo "USE_SDK_WRAPPER=1" >> $GITHUB_ENV
         mkdir -p ~/.buildozer
 
     - name: Cache buildozer
