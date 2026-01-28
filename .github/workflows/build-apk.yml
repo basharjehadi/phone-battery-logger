@@ -34,6 +34,7 @@ jobs:
           autoconf \
           automake \
           libtool \
+          libtool-bin \
           m4 \
           zlib1g-dev \
           libncurses5-dev \
@@ -47,7 +48,8 @@ jobs:
           xz-utils \
           tk-dev \
           libbz2-dev \
-          liblzma-dev
+          liblzma-dev \
+          libltdl-dev
 
     - name: Install Python tools
       run: |
@@ -70,7 +72,10 @@ jobs:
 
     - name: Pre-build (accept licenses)
       run: |
-        yes | buildozer -v android debug 2>&1 | head -50 || true
+        # Clean any potentially corrupted cache
+        buildozer android clean || true
+        # Accept licenses in background
+        yes | buildozer -v android debug 2>&1 | head -100 || true
 
     - name: Build APK
       run: |
