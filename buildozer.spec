@@ -11,30 +11,17 @@ source.include_exts = py,png,jpg,kv,atlas
 # Version
 version = 1.0
 
-# Python requirements
-requirements = python3,kivy,pyjnius
+# Python requirements - SIMPLIFIED
+requirements = python3,kivy
 
 # Permissions
 android.permissions = android.permission.BATTERY_STATS,android.permission.WRITE_EXTERNAL_STORAGE,android.permission.READ_EXTERNAL_STORAGE
 
-# Features
-android.features = 
-
-# Architecture
-android.archs = arm64-v8a,armeabi-v7a
-
-# Android API levels
+# Android settings
 android.api = 31
 android.minapi = 21
 android.ndk = 25b
+android.archs = arm64-v8a,armeabi-v7a
 
-# Services
-android.services = 
-
-# Gradle dependencies
+# Bootstrap
 p4a.bootstrap = sdl2
-p4a.local_recipes = ./recipes
-
-[buildozer]
-log_level = 2
-warn_on_root = 1
