@@ -18,18 +18,23 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Install dependencies
+    - name: Install system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y openjdk-17-jdk build-essential git zip unzip
+        sudo apt-get install -y openjdk-17-jdk build-essential git zip unzip libssl-dev libffi-dev
+
+    - name: Install buildozer
+      run: |
+        pip install --upgrade pip
         pip install buildozer cython
 
-    - name: Build APK (auto-accept licenses)
+    - name: Build APK
       run: |
-        yes | buildozer -v android debug
+        yes | buildozer android debug || buildozer android debug
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: phone-battery-logger-apk
         path: bin/*.apk
+        retention-days: 30
