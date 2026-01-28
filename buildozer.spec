@@ -12,7 +12,7 @@ source.include_exts = py,png,jpg,kv,atlas
 version = 1.0
 
 # Python requirements - SIMPLIFIED
-requirements = python3,kivy
+requirements = python3,kivy,plyer
 
 # Permissions
 android.permissions = android.permission.BATTERY_STATS,android.permission.WRITE_EXTERNAL_STORAGE,android.permission.READ_EXTERNAL_STORAGE
